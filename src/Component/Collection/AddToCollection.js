@@ -3,11 +3,7 @@ import SearchComics from '../Search/SearchComics';
 
 
 class AddComics extends Component {
-    constructor(){
-        super()
-        checkItems: [],
-
-    }
+    
 
     render(){
         return(

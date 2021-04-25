@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
+import SearchResults from '../../Container/SearchResults';
 import { getComics } from '../../Redux/Actions/Search'
 class searchComics extends Component {
     constructor(){
@@ -39,6 +40,7 @@ class searchComics extends Component {
                             id="btn-comicSearch-form">Search</button>
                     </form>
                 </div>
+                <SearchResults />
             </div>
             
 

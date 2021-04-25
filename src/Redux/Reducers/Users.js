@@ -1,12 +1,4 @@
-const authState = {
-    isLoggedIn: false,
-    user: {
-        userId: "",
-        expires_at: "",
-        jwtToken: "",
-        authorities: [],
-    },
-}
+
 
 let Users = (state = [], action) => {
     let index;

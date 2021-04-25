@@ -1,13 +1,15 @@
-export const AddComictoCollection = comic => {
+const address = 'http://localhost:3001/api/v1/'
+
+export const AddComictoCollection = comics => {
     return (dispatch) => {
-        fetch(`${address}`, {
+        fetch(`${address}update`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json"
             },
             body: JSON.stringify({
-                user,
+                comics,
                 withCredentials: true,
             })
         })
@@ -23,5 +25,4 @@ export const AddComictoCollection = comic => {
             console.log("registration error", error);
         })
     }
-}
 }
