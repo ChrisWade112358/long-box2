@@ -4,7 +4,8 @@ import './App.css';
 import UserForm from './Component/Auth/Registration';
 import LoginForm from './Component/Auth/Login';
 import searchComics from './Container/SearchComics'
-import Navbar from './Component/Nav/Navbar'
+import Navbar from './Component/Navbar'
+import Footer from './Component/Footer'
 import Home from './Component/Home'
 import About from './Component/About'
 
@@ -25,6 +26,7 @@ export default class App extends Component {
             <Route exact path={"/login"} component={LoginForm} />
             <Route exact path={"/search"} component={searchComics} />
           </Switch>
+          <Footer />
         </Router>
       </div>
     )
