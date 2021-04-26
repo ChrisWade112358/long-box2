@@ -3,7 +3,6 @@
 let Users = (state = [], action) => {
     let index;
     let user;
-    let message = console.log("I'm in User");
     switch(action.type) {
         case 'ADD_USER':
             return state.concat(action.payload);

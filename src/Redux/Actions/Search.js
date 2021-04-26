@@ -1,5 +1,6 @@
 import md5 from 'md5';
 
+const address = 'http://localhost:3001/api/v1/'
 
 const comicAddress = 'https://gateway.marvel.com/v1/public/comics?title='
 const publicKey = '582a350e7157c54cffd0259269f77c10'
@@ -20,10 +21,10 @@ export const  getComics = search => {
             console.log("comic search", res)
             return res.json()
         })
-        .then(data => {
-            console.log(data)
+        .then(result => {
+            console.log(result)
+            result.data.results.map(comic => dispatch({type:'ADD_RESULTS', payload: comic}))
             
-            dispatch({type:'ADD_RESULTS', payload: data})
         })
         .catch(error => {
             console.log(error)
@@ -32,4 +33,6 @@ export const  getComics = search => {
     }
     
 }
+
+
 

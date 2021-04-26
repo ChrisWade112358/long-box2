@@ -1,6 +1,6 @@
 const address = 'http://localhost:3001/api/v1/'
 
-export const AddComictoCollection = comics => {
+export const AddComicToCollection = comics => {
     return (dispatch) => {
         fetch(`${address}update`, {
             method: "POST",
@@ -18,8 +18,8 @@ export const AddComictoCollection = comics => {
         })
         .then(data => {
             console.log(data)
-            user = Object.assign({}, data.user, {jwt: data.jwt}, {isLoggedIn: true})
-            dispatch({type: 'ADD_USER', payload: user})
+            
+            dispatch({type: 'ADD_COMIC_TO_COLLECTION', payload: data})
         })
         .catch(error => {
             console.log("registration error", error);

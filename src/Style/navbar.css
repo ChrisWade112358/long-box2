@@ -1,0 +1,20 @@
+.navbar {
+    background-color: #476A6F;
+    display: flex;
+    align-items: center;
+
+    height: 60px;
+}
+
+#home,
+#about,
+#registration,
+#login {
+    color: #A3C4BC;
+    margin: 20px;
+    
+}
+
+#home {
+    margin-left: 265px;
+}

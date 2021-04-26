@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import SearchResults from '../../Container/SearchResults';
-import { getComics } from '../../Redux/Actions/Search'
+import SearchResults from './SearchResults';
+import { getComics } from '../Redux/Actions/Search'
 class searchComics extends Component {
     constructor(){
         super()
@@ -47,5 +47,7 @@ class searchComics extends Component {
         )
     }
 }
+
+
 
 export default connect(null, {getComics})(searchComics)
