@@ -1,14 +1,15 @@
 .footer {
     background-color: #476A6F;
     display: flex;
-    align-items: right;
-
+    align-items: center;
+    text-align: center;
     height: 200px;
 }
 
 #footer {
     width: 100%;
     display: flex;
+    
     font-size: 7px;
 }
 
@@ -22,15 +23,15 @@
 
 li{
     list-style-type: none;
-
-margin-left: 200px;
+    margin-left: 770px;
+    text-align: center;
     
 }
 
 a{
     align-items: center;
     padding: 0;
-    margin-left: 150px;
+    text-align: center;
 }
 
 
@@ -40,18 +41,4 @@ footer-p{
     
 }
 
-#footer-author{
 
-}
-
-#footer-thank-flatiron{
-
-}
-
-#footer-thank-Marvel{
-
-}
-
-#marvel-link{
-
-}

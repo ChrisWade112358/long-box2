@@ -1,5 +1,3 @@
-
-
 let Users = (state = [], action) => {
     let index;
     let user;
@@ -12,7 +10,7 @@ let Users = (state = [], action) => {
         case 'EDIT_USER':
             index = state.findIndex(user => user.id === action.user.id);
              user = state[index];
-
+            
             return [
                 ...state.slice(0, index),
                 Object.assign({}, user, action.user),

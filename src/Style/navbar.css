@@ -2,7 +2,7 @@
     background-color: #476A6F;
     display: flex;
     align-items: center;
-
+    
     height: 60px;
 }
 
@@ -12,9 +12,12 @@
 #login {
     color: #A3C4BC;
     margin: 20px;
+    margin-left: 200px;
     
 }
 
+
+
 #home {
-    margin-left: 265px;
+    margin-left: 550px;
 }

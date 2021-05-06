@@ -38,7 +38,7 @@
   label {
     
     font-size: 0.8em;
-    margin-left: 130px;
+    
     margin-bottom: 0.25em;
     text-justify: center;
     color: #222;
@@ -48,7 +48,7 @@
   
   input {
     padding: 10px 10px;
-    margin-left: 70px;
+    margin-left: 0px;
     margin-bottom: 15px;
     border-radius: 5px;
     outline: none;

@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
 import Users from './Users'
-import Search from './Search'
+import Comics from './Comics'
 import Collection from './Collection'
 
 
 
 
-const rootReducer = combineReducers({Users, Search, Collection})
+const rootReducer = combineReducers({Users, Comics, Collection})
 
 export default rootReducer;

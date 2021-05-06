@@ -1,13 +1,17 @@
-import React, { Component } from 'react'
-import DisplayCollection from '../Container/DisplayCollection'
-
-export default class Home extends Component {
-    render(){
+import '../Style/Home.css'
+const Home = props => {
+    
         return(
-            <h1>Home</h1>
+            <div className="home">
+                <h1>The Long Box</h1>
+                
+                
+            </div>
+            
         )
-    }
+   
 }
+export default Home
 
 
 

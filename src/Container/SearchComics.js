@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import SearchResults from './SearchResults';
 import { getComics } from '../Redux/Actions/Search'
+import '../Style/Search.css'
 class searchComics extends Component {
     constructor(){
         super()
@@ -26,17 +27,18 @@ class searchComics extends Component {
         return(
             <div className="wrapper">
                 <div className="comic-search-wrapper">
-                    <h1>getComics</h1>
-                    <form onSubmit={this.handleSubmit} >
+                    <h1 className="seach-comics-title">Search Comics</h1>
+                    <form className="search-form" onSubmit={this.handleSubmit} >
                         <input 
+                            className="search-input"
                             type="text" 
                             name="searchText" 
                             value={this.state.searchText} 
                             onChange={this.handleChange} 
                             placeholder="search" />
                         <button 
+                            className="search-button"
                             type="submit" 
-                            className="btn-default" 
                             id="btn-comicSearch-form">Search</button>
                     </form>
                 </div>

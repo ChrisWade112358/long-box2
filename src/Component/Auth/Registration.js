@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addUser } from '../../Redux/Actions/Users';
+import { AddUser } from '../../Redux/Actions/Users';
 import '../../Style/Registration.css';
 
 
 const emailRegex = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
 const zipRegex = /^[0-9]{5}(?:-[0-9]{4})?$/;
+
 
 
 const formValid = ({formErrors, ...rest}) => {
@@ -23,19 +24,11 @@ const formValid = ({formErrors, ...rest}) => {
     return valid;
 }
 
-class UserForm extends Component {
-    state = {
-        
-        firstName: '',
-        lastName: '',
-        address: '',
-        city: '',
-        state: '',
-        zip: '',
-        email: '',
-        password: '',
-        confirmPassword: '',
-        formErrors: {
+class Registration extends Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            
             firstName: '',
             lastName: '',
             address: '',
@@ -45,13 +38,27 @@ class UserForm extends Component {
             email: '',
             password: '',
             confirmPassword: '',
-        }    
+            formErrors: {
+                firstName: '',
+                lastName: '',
+                address: '',
+                city: '',
+                state: '',
+                zip: '',
+                email: '',
+                password: '',
+                confirmPassword: '',
+            },
+        }
+
+
+        
     }
 
     handleChange = event => {
         const { name, value } =  event.target;
         let formErrors = {...this.state.formErrors}
-
+        
         switch (name) {
             case "firstName":
                     formErrors.firstName = value.length < 2 
@@ -109,6 +116,7 @@ class UserForm extends Component {
     };
 
     handleOnSubmit = event => {
+        
         event.preventDefault();
         const user = {
             firstname: this.state.firstName,
@@ -119,14 +127,17 @@ class UserForm extends Component {
             state: this.state.state,
             zip: this.state.zip,
             password: this.state.password
-        }
+        };
         if(formValid(this.state)){
+            this.props.AddUser(user);
             
-            this.props.addUser(user);
+            
         }
         else{
             console.error('FORM INVALID - DISPLAY ERROR MESSAGE');
-        }
+        };
+        
+        
         
         this.setState({
             firstName: '',
@@ -149,7 +160,8 @@ class UserForm extends Component {
                 password: '',
                 confirmPassword: '',
             } 
-        })
+        });
+        
     };
 
     render(){
@@ -321,4 +333,4 @@ class UserForm extends Component {
 
 
 
-export default connect(null, { addUser })(UserForm)
+export default connect(null, { AddUser })(Registration)

@@ -1,15 +1,18 @@
 const address = 'http://localhost:3001/api/v1/'
 
-export const AddComicToCollection = comics => {
+export const AddComicToCollection = comic => {
+     let userId = localStorage.user_id
     return (dispatch) => {
-        fetch(`${address}update`, {
+        fetch(`${address}/${userId}update`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "Accept": "application/json"
+                "Accept": "application/json",
+                "Authorization": `Bearer ${localStorage.jwtToken}`
             },
             body: JSON.stringify({
-                comics,
+                comic,
+                userId,
                 withCredentials: true,
             })
         })
@@ -26,3 +29,18 @@ export const AddComicToCollection = comics => {
         })
     }
 }
+
+export const likeComic = comicId => {
+    return{
+        type: 'LIKE_COMIC',
+        comicId,
+    }
+}
+export const dislikeComic = comicId => {
+    return{
+        type: 'DISLIKE_COMIC',
+        comicId,
+    }
+}
+
+
