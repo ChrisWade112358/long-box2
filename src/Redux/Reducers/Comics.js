@@ -1,11 +1,10 @@
 let Comics = (state = [], action) => {
     
     let index;
-    let addedSomethingToCreateNewPushInHopeThatTheNotesShowUp;
     let comic;
    switch(action.type) {
         case 'ADD_RESULTS':
-            let comic = {...action.payload, likes: 0} 
+            comic = {...action.payload, likes: 0} 
             return state.concat(comic);
 /*added like checkbox that updates when checked. If you dont pause 
 during the reducer before comic is initialized it will give an error but 
